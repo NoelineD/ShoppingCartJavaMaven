@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import cn.techtutorial.model.User;
 
 import cn.techtutorial.connection.dbConnect;
-import cn.techtutorial.model.UserDao;
+import cn.techtutorial.dao.UserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

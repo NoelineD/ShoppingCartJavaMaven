@@ -13,17 +13,27 @@
       <li class="nav-item">
         <a class="nav-link" href="cart.jsp">Cart</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="orders.jsp">Orders</a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link" href="login.jsp">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout.jsp">Logout</a>
-      </li>
-
+      <% if(auth != null){ %>
+    	  <li class="nav-item">
+          <a class="nav-link" href="orders.jsp">Orders</a>
+          </li>
+          
+          <li class="nav-item">
+          <a class="nav-link" href="log-out">Logout</a>
+        </li>
+     <% } else {  %>
+    	     
+          <li class="nav-item">
+      <a class="nav-link" href="login.jsp">Login</a>
+    	  </li>
+     <% } %>
       
+    </ul>
+
+  </div>
+</div>
+</nav>
+
 <!--       <li class="nav-item dropdown"> -->
 <!--         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
 <!--           Dropdown -->
@@ -35,11 +45,3 @@
 <!--           <a class="dropdown-item" href="#">Something else here</a> -->
 <!--         </div> -->
 <!--       </li> -->
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-
-  </div>
-</div>
-</nav>
