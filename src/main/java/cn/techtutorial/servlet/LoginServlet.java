@@ -30,15 +30,20 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset-UTF-8");
 		try(PrintWriter out = response.getWriter()){
+			
+			// on recupere les parametres stockés dans le formulaire
 			String email = request.getParameter("login-email");
 			String password = request.getParameter("login-password");
 			out.print(email+password);
 			
 			try {
+		    // creation nouvelle instance dao
 				UserDao udao= new UserDao(dbConnect.getConnection());
-//				returning a user type
+		
+			//	Appelle la méthode UserLogin de UserDao pour vérifier les informations de connexion. La méthode renvoie un objet User.
 				User user= udao.UserLogin(email, password);
 				
+				// si utilisateur existe alors  Stocke l'objet user dans la session de l'utilisateur pour le marquer comme authentifié et renvoie vers index
 				if(user != null) {
 					request.getSession().setAttribute("auth", user);
 					response.sendRedirect("index.jsp");

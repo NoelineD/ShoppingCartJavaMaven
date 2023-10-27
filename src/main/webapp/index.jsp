@@ -1,18 +1,25 @@
 <%@ page import="java.util.List"%>
-<%@ page import="cn.techtutorial.dao.ProductDao"%>
+<%@ page import="java.util.*"%>
 <%@ page import="cn.techtutorial.connection.dbConnect"%>
 <%@ page import="cn.techtutorial.model.User"%>
 <%@ page import="cn.techtutorial.model.Product"%>
+<%@ page import="cn.techtutorial.model.Cart"%>
+<%@ page import="cn.techtutorial.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <% User auth = (User) request.getSession().getAttribute("auth");
    if (auth!=null){
 	   request.setAttribute("auth",auth);
-   }
+   } 
   
    ProductDao pd= new ProductDao(dbConnect.getConnection());
    
    List<Product> products = pd.getAllProducts();
+   
+   ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
+   if(cart_list != null){
+   	   request.setAttribute("cart_list", cart_list);
+   }
 %>
 <!DOCTYPE html>
 <html>
@@ -41,7 +48,7 @@
     			
     						<div class="mt-3 justify-content-between d-flex">
     						
-   			    			<a href="#" class="btn btn-dark">Add to Cart</a>
+   			    			<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>
    			    			<a href="#" class="btn btn-danger">Buy now</a>
    			    			
    			                </div>
