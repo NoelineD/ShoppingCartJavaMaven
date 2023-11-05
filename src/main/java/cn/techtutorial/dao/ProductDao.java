@@ -73,6 +73,28 @@ public List<Cart> getCartProducts(ArrayList<Cart> cartList){
 	return products;
 }
 
+public Product getSingleProduct(int id) {
+	Product row = new Product();
+	try {
+		query= "select * from products where id=?";
+		pst= this.con.prepareStatement(query);
+		pst.setInt(1, id);
+		rs=pst.executeQuery();
+		
+		while(rs.next()) {
+			row.setId(rs.getInt("id"));
+			row.setName(rs.getString("name"));
+			row.setCategory(rs.getString("Category"));
+			row.setPrice(rs.getDouble("price"));
+			row.setImage(rs.getString("image"));
+		}
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	return row;
+}
+
 public double getTotalCartPrice(ArrayList<Cart> cartList) {
 	double sum = 0;
 	
@@ -96,6 +118,24 @@ public double getTotalCartPrice(ArrayList<Cart> cartList) {
 		e.printStackTrace();
 	}
 	return sum;
+}
+
+public boolean createNewProduct(Product product) {
+    try {
+    	
+        query = "INSERT INTO products (name, category, price, image) VALUES (?, ?, ?, ?)";
+        pst = this.con.prepareStatement(query);
+        pst.setString(1, product.getName());
+        pst.setString(2, product.getCategory());
+        pst.setDouble(3, product.getPrice());
+        pst.setString(4, product.getImage());
+        int rowsInserted = pst.executeUpdate();
+        return rowsInserted > 0;
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
 }
 
 }

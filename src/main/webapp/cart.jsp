@@ -46,7 +46,7 @@ font-size:25px;
 <div class="container">
 	<div class="d-flex py-3">
 		<h3>Total price: $ ${ (total>0)?dcf.format(total):0 }  </h3>
-		<a class="mx-3 btn btn-primary" href="#">Check Out</a>
+		<a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a>
 	</div>
 	<table class="table table-loght">
 		<thead>
@@ -67,7 +67,7 @@ font-size:25px;
 				<td><%= c.getCategory() %></td>
 				<td><%= dcf.format(c.getPrice()) %></td>
 				<td>
-				<form action="" method="post" class="form-inline">
+				<form action="buy-order-now" method="post" class="form-inline">
 				<input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
 				
 				<div class="form-group d-flex justify-content-between w-50">

@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import cn.techtutorial.model.Cart;
 
 /**
- * Servlet implementation class RemoveFromCartServlet
- */
+ * Servlet implementation class QuantityIncDecServlet
+ @webServlet("/remove-from-cart") */
+
 public class RemoveFromCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
