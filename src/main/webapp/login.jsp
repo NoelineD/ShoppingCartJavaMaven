@@ -4,14 +4,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <% User auth = (User) request.getSession().getAttribute("auth");
-    if (auth!=null){
-	   response.sendRedirect("index.jsp");
+    boolean isAdmin = false; // Initialisez isAdmin à false
+
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+        isAdmin = "admin".equals(auth.getRole()); // Mise à jour de la valeur de isAdmin
+        request.setAttribute("isAdmin", isAdmin); // Mettez isAdmin dans la portée de la requête pour une utilisation ultérieure
     }
     
     ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
     if(cart_list != null){
     	   request.setAttribute("cart_list", cart_list);
     }
+    
     %>
 <!DOCTYPE html>
 <html> 

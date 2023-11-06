@@ -1,5 +1,4 @@
-		<div class="container">
-			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
 		    <div class="container">
 		    	<a class="navbar-brand" href="index.html">MyDigitalShop</a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,13 +50,14 @@
 <%-- 			                <% } %> --%>
 			                
 			             <% 
-    						if (auth != null) {
-        						if (isAdmin) { %>
-									<a class="dropdown-item" href="logout.jsp">LogOut</a>
+			              // Récupérez la valeur de isAdmin depuis la portée de la requête
+    						if (auth != null) { 
+        						if (isAdmin) { %>  
+									<a class="dropdown-item" href="log-out">LogOut</a>
             						<a class="dropdown-item" href="createproduct.jsp">Create Product</a>
-            						<a class="dropdown-item" href="modifyproduct.jsp">Modify Product</a>
+            						<a href="index.jsp" class="btn btn-secondary">Modify Product</a>
         						<% } else { %>
-            						<a class="dropdown-item" href="logout.jsp">LogOut</a>
+            						<a class="dropdown-item" href="log-out">Logout</a>
             						<a class="dropdown-item" href="orders.jsp">My Orders</a>
         						<% }
     							} else {  %>

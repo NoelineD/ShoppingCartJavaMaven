@@ -22,8 +22,15 @@ public class CreateProductServlet extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String category = request.getParameter("category");
-		double price = Double.parseDouble(request.getParameter("price"));
+		String priceStr = request.getParameter("price"); // Récupérez la chaîne de prix
 		String image = request.getParameter("image");
+		
+		double price = 0.0; // Valeur par défaut si la chaîne priceStr est nulle
+		
+		 if (priceStr != null && !priceStr.isEmpty()) {
+		        // Si priceStr n'est ni nulle ni vide, convertissez-la en double
+		        price = Double.parseDouble(priceStr);
+		    }
 		
 //		create new product
 		Product newProduct = new Product();

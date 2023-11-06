@@ -138,4 +138,21 @@ public boolean createNewProduct(Product product) {
     }
 }
 
+public boolean modifyProduct(Product product) {
+    try {
+        query = "UPDATE products SET name = ?, category = ?, price = ?, image = ? WHERE id = ?";
+        pst = this.con.prepareStatement(query);
+        pst.setString(1, product.getName());
+        pst.setString(2, product.getCategory());
+        pst.setDouble(3, product.getPrice());
+        pst.setString(4, product.getImage());
+        pst.setInt(5, product.getId());
+        int rowsUpdated = pst.executeUpdate();
+        return rowsUpdated > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+
 }

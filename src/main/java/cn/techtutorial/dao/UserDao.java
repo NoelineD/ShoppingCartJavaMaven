@@ -28,10 +28,11 @@ public class UserDao {
             rs = pst.executeQuery();
             if(rs.next()){
 //            	probleme sur user donc ajout d'arguments
-            	user = new User(0, password, password, password);
+            	user = new User(0, "defaultName", "defaultEmail", "defaultPassword", "role");
             	user.setId(rs.getInt("id"));
             	user.setName(rs.getString("name"));
             	user.setEmail(rs.getString("email"));
+            	user.setRole(rs.getString("role"));
             }
         } catch (SQLException e) {
             System.out.print(e.getMessage());

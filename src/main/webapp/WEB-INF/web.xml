@@ -109,4 +109,14 @@
     <servlet-name>CreateProductServlet</servlet-name>
     <url-pattern>/create-product</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModifyProductServlet</display-name>
+    <servlet-name>ModifyProductServlet</servlet-name>
+    <servlet-class>cn.techtutorial.servlet.ModifyProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyProductServlet</servlet-name>
+    <url-pattern>/modify-product</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> Le produit a été crée avec succès</h1>
+	<h1> Le produit a été crée ou modifier avec succès</h1>
 </body>
 </html>
