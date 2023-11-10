@@ -6,13 +6,13 @@
 <%@ page import="cn.techtutorial.model.Cart"%>
 <%@ page import="cn.techtutorial.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+   pageEncoding="ISO-8859-1"%>
 <% 
 User auth = (User) request.getSession().getAttribute("auth");
 boolean isAdmin = false; // Initialisez isAdmin à false
 
 if (auth != null) {
-    request.setAttribute("auth", auth);
+    request.setAttribute("auth", auth); 
     isAdmin = "admin".equals(auth.getRole()); // Mise à jour de la valeur de isAdmin
     request.setAttribute("isAdmin", isAdmin); // Mettez isAdmin dans la portée de la requête pour une utilisation ultérieure
 }
@@ -34,6 +34,7 @@ ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
 </head>
 
 <body >
+
 <%@ include file="includes/navbar.jsp" %>
 
 <div class="container">
@@ -57,7 +58,7 @@ ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
     						
     						<% if (isAdmin) { %>
     						
-                            <a href="modify-product?id=<%= p.getId() %>" class="btn btn-primary">Modify</a>
+                            <a href="modifyproduct.jsp?id=<%= p.getId() %>" class="btn btn-primary">Modify</a>
                     		
                     		<% } else { %>
    			    			<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>

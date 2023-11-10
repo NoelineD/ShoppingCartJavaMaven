@@ -26,6 +26,7 @@
 </head>
 <body>
 <%@ include file="includes/navbar.jsp" %>
+
 <div class="container">
 	<div class="card mx-auto w-50 my-5">
 		<div class="card-header text-center">User Login</div>

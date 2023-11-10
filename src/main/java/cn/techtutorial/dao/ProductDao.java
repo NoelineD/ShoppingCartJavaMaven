@@ -74,25 +74,25 @@ public List<Cart> getCartProducts(ArrayList<Cart> cartList){
 }
 
 public Product getSingleProduct(int id) {
-	Product row = new Product();
-	try {
-		query= "select * from products where id=?";
-		pst= this.con.prepareStatement(query);
-		pst.setInt(1, id);
-		rs=pst.executeQuery();
-		
-		while(rs.next()) {
-			row.setId(rs.getInt("id"));
-			row.setName(rs.getString("name"));
-			row.setCategory(rs.getString("Category"));
-			row.setPrice(rs.getDouble("price"));
-			row.setImage(rs.getString("image"));
-		}
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	return row;
+    Product row = new Product();
+    try {
+        query= "select * from products where id=?";
+        pst= this.con.prepareStatement(query);
+        pst.setInt(1, id);
+        rs=pst.executeQuery();
+        
+        while(rs.next()) {
+            row.setId(rs.getInt("id"));
+            row.setName(rs.getString("name"));
+            row.setCategory(rs.getString("category")); // Correction ici
+            row.setPrice(rs.getDouble("price"));
+            row.setImage(rs.getString("image"));
+        }
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return row;
 }
 
 public double getTotalCartPrice(ArrayList<Cart> cartList) {

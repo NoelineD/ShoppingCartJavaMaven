@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> Le produit a été crée ou modifier avec succès</h1>
+
+	<h1 style="text-align: center; margin-top: 50px;"> Le produit a été crée ou modifier avec succès</h1>
 </body>
 </html>

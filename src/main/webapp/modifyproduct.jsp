@@ -1,7 +1,9 @@
 <%@ page import="java.util.*" %>
 <%@ page import="cn.techtutorial.model.Product" %>
+<%@ page import="cn.techtutorial.dao.ProductDao" %>
 <%@ page import="cn.techtutorial.model.User" %>
 <%@ page import="cn.techtutorial.model.Cart" %>
+<%@ page import="cn.techtutorial.connection.dbConnect" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 
 <% 
@@ -19,14 +21,20 @@
         request.setAttribute("cart_list", cart_list);
     }
     
+    Product product = null; //variable declaré en dehors du bloc sinon non reconnue
     
     String productId = request.getParameter("id");
     if (productId != null) {
-        // Convertissez productId en entier si nécessaire
+        // Convertir productId en entier si nécessaire
         int productIdInt = Integer.parseInt(productId);
         
-        // Utilisez productIdInt pour afficher les détails du produit à modifier
-        // Vous pouvez interagir avec la base de données pour récupérer les informations du produit en fonction de l'ID.
+        // Utiliser productIdInt pour récupérer les détails du produit à modifier
+        // récupérer les informations du produit dans la bdd en fonction de l'ID.
+        ProductDao productDao = new ProductDao(dbConnect.getConnection());
+        product = productDao.getSingleProduct(productIdInt);
+
+        // Placez le produit dans la portée de la requête
+        request.setAttribute("product", product);
     } else {
         // Gérez le cas où aucun ID de produit n'est fourni
         out.println("Product ID is missing.");
@@ -45,6 +53,7 @@
     <div class="container mt-5 mb-5" style="height:600px;">
         <h2>Modify Product</h2>
         <form action="modify-product" method="post">
+        <input type="hidden" name="id" value="<%= product.getId() %>">
             <div class="form-group">
                 <label for="name">Product Name:</label>
                 <input type="text" class="form-control" id="name" name="name" value="<%= product.getName() %>" required>

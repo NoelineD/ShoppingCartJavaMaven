@@ -1,4 +1,4 @@
-		<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+   <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
 		    <div class="container">
 		    	<a class="navbar-brand" href="index.html">MyDigitalShop</a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,16 +38,6 @@
 						           			
 	              		</div>
 	              	<div class="col-md-3">
-<%-- 	              		 <% if(auth != null){ %> --%>
-	         
-<!-- 			                <a class="dropdown-item" href="logout.jsp">LogOut</a> -->
-<!-- 			                <a class="dropdown-item" href="orders.jsp">My Orders</a> -->
-			                
-<%-- 			                <% } else {  %> --%>
-			                
-<!-- 			                <a class="dropdown-item" href="login.jsp">LogIn</a> -->
-			                
-<%-- 			                <% } %> --%>
 			                
 			             <% 
 			              // Récupérez la valeur de isAdmin depuis la portée de la requête
@@ -55,7 +45,7 @@
         						if (isAdmin) { %>  
 									<a class="dropdown-item" href="log-out">LogOut</a>
             						<a class="dropdown-item" href="createproduct.jsp">Create Product</a>
-            						<a href="index.jsp" class="btn btn-secondary">Modify Product</a>
+            						<a href="index.jsp" class="dropdown-item">Modify Product</a>
         						<% } else { %>
             						<a class="dropdown-item" href="log-out">Logout</a>
             						<a class="dropdown-item" href="orders.jsp">My Orders</a>
@@ -74,50 +64,4 @@
 		  </nav>
     <!-- END nav -->
     
-<!--     <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
-<!-- <div class="container"> -->
-<!--   <a class="navbar-brand" href="index.jsp">MyShoppingCart</a> -->
-<!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
-<!--     <span class="navbar-toggler-icon"></span> -->
-<!--   </button> -->
-
-<!--   <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-<!--     <ul class="navbar-nav ml-auto"> -->
-<!--       <li class="nav-item active"> -->
-<!--         <a class="nav-link" href="index.jsp">Home </a> -->
-<!--       </li> -->
-<!--       <li class="nav-item"> -->
-<%--         <a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger px-1">${ cart_list.size() }</span></a> --%>
-<!--       </li> -->
-<%--       <% if(auth != null){ %> --%>
-<!--     	  <li class="nav-item"> -->
-<!--           <a class="nav-link" href="orders.jsp">Orders</a> -->
-<!--           </li> -->
-          
-<!--           <li class="nav-item"> -->
-<!--           <a class="nav-link" href="log-out">Logout</a> -->
-<!--         </li> -->
-<%--      <% } else {  %> --%>
-    	     
-<!--           <li class="nav-item"> -->
-<!--       <a class="nav-link" href="login.jsp">Login</a> -->
-<!--     	  </li> -->
-<%--      <% } %> --%>
-      
-<!--     </ul> -->
-
-<!--   </div> -->
-<!-- </div> -->
-<!-- </nav> -->
-
-<!--       <li class="nav-item dropdown"> -->
-<!--         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-<!--           Dropdown -->
-<!--         </a> -->
-<!--         <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
-<!--           <a class="dropdown-item" href="#">Action</a> -->
-<!--           <a class="dropdown-item" href="#">Another action</a> -->
-<!--           <div class="dropdown-divider"></div> -->
-<!--           <a class="dropdown-item" href="#">Something else here</a> -->
-<!--         </div> -->
-<!--       </li> -->
+<!--       <a class="nav-link" href="log-out">Logout</a> --> -->

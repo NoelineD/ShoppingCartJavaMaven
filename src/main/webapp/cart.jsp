@@ -11,9 +11,13 @@
 DecimalFormat dcf= new DecimalFormat("#.##");
 request.setAttribute("dcf",dcf);
 User auth = (User) request.getSession().getAttribute("auth");
-   if (auth!=null){
-	   request.setAttribute("auth",auth);
-   }
+boolean isAdmin = false; // Initialisez isAdmin à false
+
+if (auth != null) {
+    request.setAttribute("auth", auth);
+    isAdmin = "admin".equals(auth.getRole()); // Mise à jour de la valeur de isAdmin
+    request.setAttribute("isAdmin", isAdmin); // Mettez isAdmin dans la portée de la requête pour une utilisation ultérieure
+}
    
    ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
    List<Cart> cartProduct = null;
