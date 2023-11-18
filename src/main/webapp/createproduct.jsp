@@ -27,7 +27,7 @@
 </head>
 <body>
 <%@ include file="includes/navbar.jsp" %>
-<div class="container mt-5 mb-5" style="height:600px;;">
+<div class="container mt-5 mb-5" style="height:600px;">
         <h2>Create New Product</h2>
         <form action="create-product" method="post">
             <div class="form-group">

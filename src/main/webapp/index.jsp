@@ -37,7 +37,7 @@ ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
 
 <%@ include file="includes/navbar.jsp" %>
 
-<div class="container">
+<div class="container" style="height:1800px;">
 
 <div class="card-header my-3">All products</div>
 	<div class="row">
@@ -56,13 +56,13 @@ ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
     			
     						<div class="mt-3 justify-content-between d-flex">
     						
-    						<% if (isAdmin) { %>
+    						<% if (isAdmin) { %> 
     						
                             <a href="modifyproduct.jsp?id=<%= p.getId() %>" class="btn btn-primary">Modify</a>
                     		
                     		<% } else { %>
    			    			<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>
-   			    			<a href="order-now?quantity=1&id=<%= p.getId() %>" class="btn btn-danger">Buy now</a>
+   			    			<a href="order-now?quantity=1&id=<%= p.getId() %>" class="btn btn-purple">Buy now</a>
    			    			<% } %>
    			                </div>
    	 				</div>

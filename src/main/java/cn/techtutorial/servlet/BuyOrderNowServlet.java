@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.Iterator;
 import cn.techtutorial.connection.dbConnect;
 import cn.techtutorial.dao.OrderDao;
 import cn.techtutorial.model.Cart;
@@ -48,15 +48,17 @@ public class BuyOrderNowServlet extends HttpServlet {
 	                OrderDao orderDao = new OrderDao(dbConnect.getConnection());
 	                boolean result = orderDao.insertOrder(orderModel);
 	                if (result) {
-	                    ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
-	                    if (cart_list != null) {
-	                        for (Cart c : cart_list) {
-	                            if (c.getId() == Integer.parseInt(productId)) {
-	                                cart_list.remove(cart_list.indexOf(c));
-	                                break;
-	                            }
-	                        }
-	                    }
+	                	ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
+	                	if (cart_list != null) {
+	                	    Iterator<Cart> iterator = cart_list.iterator();
+	                	    while (iterator.hasNext()) {
+	                	        Cart c = iterator.next();
+	                	        if (c.getId() == Integer.parseInt(productId)) {
+	                	            iterator.remove();
+	                	            break;
+	                	        }
+	                	    }
+	                	}
 	                    response.sendRedirect("orders.jsp");
 	                } else {
 	                    out.println("order failed");

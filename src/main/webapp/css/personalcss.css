@@ -1,0 +1,66 @@
+.btn-purple {
+  color: #fff;
+  background-color: #8186D5;
+  border-color: #8186D5; }
+
+  .btn-purple:hover {
+    color: #fff;
+    background-color: #6168d2;
+    border-color: #6168d2; }
+  .btn-purple:focus, .btn-danger.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(181, 153, 252, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(181, 153, 252, 0.5); }
+  .btn-purple.disabled, .btn-danger:disabled {
+    color: #fff;
+    background-color: #8186D5;
+    border-color: #8186D5; }
+  .btn-purple:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
+  .show > .btn-danger.dropdown-toggle {
+    color: #fff;
+    background-color: #6168d2;
+    border-color: #6168d2; }
+    .btn-purple:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-danger.dropdown-toggle:focus {
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(181, 153, 252, 0.5);
+      box-shadow: 0 0 0 0.2rem rgba(181, 153, 252, 0.5); }
+
+/*banniere shopping cart*/
+
+      .transparent-bg {
+      background-color: transparent;
+   }
+   
+   .position-bottom-left {
+     position: absolute;
+     left: 20px;
+     bottom:50px;
+    } 
+    
+    /* Centrer l'image verticalement avant d flex*/
+    .align {
+      align-items: center;
+    }
+    
+    .img-banner {
+		width:100%;
+		max-height:250px;
+	}
+	
+    .container-cart{
+	width: 100%;
+    
+	}  
+	
+	.max-height-500 {
+         max-height: 250px;
+    }
+    
+    .cart-content{
+		padding-top:250px;
+	}
+	
+
+
+    
+/*Fin banniere shopping cart*/
+  

@@ -40,7 +40,7 @@ if (auth != null) {
 
 <%@ include file="includes/navbar.jsp" %>
 
-<div class="container">
+<div class="container mt-5 mb-5" style="height:600px;">
 		<div class="card-header my-3">All Orders</div>
 		<table class="table table-light">
 			<thead>

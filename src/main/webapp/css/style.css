@@ -23,6 +23,7 @@
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
+  --purpleDigital: #8186D5;
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
@@ -2199,6 +2200,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545; }
+
   .btn-danger:hover {
     color: #fff;
     background-color: #c82333;
@@ -2219,6 +2221,16 @@ fieldset:disabled a.btn {
     .show > .btn-danger.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5); }
+      
+  .btn-digital {
+      color: #fff;
+      background-color: #8186D5;
+      border-color: #8186D5;
+    }
+   .btn-digital:hover {
+    color: #212529; 
+    background-color: #8186D5;
+    border-color: rgb(128, 128, 255); }
 
 .btn-light {
   color: #212529;

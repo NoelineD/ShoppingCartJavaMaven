@@ -9,4 +9,5 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/personalcss.css">
 <link rel="stylesheet" href="css/styleFooter.css">

@@ -29,7 +29,9 @@ if (auth != null) {
    	   request.setAttribute("cart_list", cart_list);
 	   request.setAttribute("total", total);
    }
+   
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,26 +46,34 @@ font-size:25px;
 }
 </style>
 </head> 
-<body>
+<body> 
+ 
 <%@ include file="includes/navbar.jsp" %>
+    
+<div class="container-cart mb-5" style="height:1200px; width:100%;">
 
-<div class="container">
-	<div class="d-flex py-3">
-		<h3>Total price: $ ${ (total>0)?dcf.format(total):0 }  </h3>
-		<a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a>
-	</div>
-	<table class="table table-loght">
-		<thead>
-		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Category</th>
-		<th scope="col">Price</th>
-		<th scope="col">Buy Now</th>
-		<th scope="col">Cancel</th>
-		</tr>
-		</thead>
+
+   <div class="text-center position-relative">
+        <div class="align max-height-500">
+            <img class="img-banner" src="product-images/banniere.jpg" alt="introImg" style="width:100%; max-height:600px;">
+        </div>
+        <button class="btn btn-purple transparent-bg position-bottom-left" type="button">Retour aux produits</button>
+    </div>
+
+
+	<div class="cart-content" style="margin-top:115px; margin-left:15px; margin-right:15px;">
+		<table class="table table-loght">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Category</th>
+					<th scope="col">Price</th>
+					<th scope="col">Buy Now</th>
+					<th scope="col">Cancel</th>
+				</tr>
+			</thead>
 		
-		<tbody>
+			<tbody>
 		<% if(cart_list != null) { 
 			for(Cart c:cartProduct){ %>
 				<tr>
@@ -82,21 +92,30 @@ font-size:25px;
 				
 				</div>
 				
-				<button type="submit" class="btn btn-primary btn-sm">Buy</button>
+				<button type="submit" class="btn btn-purple btn-sm">Buy</button>
 				
 				</form>
 				
 				</td>
 				
-				<td><a class="btn btn-danger btn-sm" href="remove-from-cart?id=<%= c.getId() %>">Remove</a></td>
+				<td><a class="btn btn-dark btn-sm" href="remove-from-cart?id=<%= c.getId() %>">Remove</a></td>
 				</tr>
 		<%	}
 		}%>
 		
 		</tbody>
 	</table>
+	
+	<div class="d-flex py-3">
+		<h3>Total price: $ ${ (total>0)?dcf.format(total):0 }  </h3>
+		<a class="mx-3 btn btn-purple" href="cart-check-out">Check Out</a>
+	</div>
+	</div>
 </div>
 
+
 <%@ include file="includes/footer.jsp" %>
+
 </body>
+
 </html>

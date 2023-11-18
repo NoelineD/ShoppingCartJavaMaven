@@ -4,6 +4,8 @@ import java.util.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import cn.techtutorial.model.*;
 ;
 
@@ -78,7 +80,7 @@ public class OrderDao {
             pst = this.con.prepareStatement(query);
             pst.setInt(1, id);
             pst.executeUpdate(); // Use executeUpdate() for delete requests
-        } catch (Exception e) {
+    	} catch (SQLException e) {
             e.printStackTrace();
         }
     }
