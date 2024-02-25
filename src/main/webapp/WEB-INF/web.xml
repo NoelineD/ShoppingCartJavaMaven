@@ -13,7 +13,7 @@
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.LoginServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>LoginServlett</display-name>
     <servlet-name>LoginServlett</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.LoginServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlett</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>LogoutServlet</display-name>
     <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.LogoutServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.LogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
@@ -43,7 +43,7 @@
     <description></description>
     <display-name>AddToCartServlet</display-name>
     <servlet-name>AddToCartServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.AddToCartServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.AddToCartServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddToCartServlet</servlet-name>
@@ -53,7 +53,7 @@
     <description></description>
     <display-name>QuantityIncDecServlet</display-name>
     <servlet-name>QuantityIncDecServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.QuantityIncDecServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.QuantityIncDecServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>QuantityIncDecServlet</servlet-name>
@@ -63,7 +63,7 @@
     <description></description>
     <display-name>RemoveFromCartServlet</display-name>
     <servlet-name>RemoveFromCartServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.RemoveFromCartServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.RemoveFromCartServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RemoveFromCartServlet</servlet-name>
@@ -73,7 +73,7 @@
     <description></description>
     <display-name>CheckOutServlet</display-name>
     <servlet-name>CheckOutServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.CheckOutServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.CheckOutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CheckOutServlet</servlet-name>
@@ -83,7 +83,7 @@
     <description></description>
     <display-name>BuyOrderNowServlet</display-name>
     <servlet-name>BuyOrderNowServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.BuyOrderNowServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.BuyOrderNowServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BuyOrderNowServlet</servlet-name>
@@ -93,7 +93,7 @@
     <description></description>
     <display-name>CancelOrderServlet</display-name>
     <servlet-name>CancelOrderServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.CancelOrderServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.CancelOrderServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CancelOrderServlet</servlet-name>
@@ -103,7 +103,7 @@
     <description></description>
     <display-name>CreateProductServlet</display-name>
     <servlet-name>CreateProductServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.CreateProductServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.CreateProductServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CreateProductServlet</servlet-name>
@@ -113,10 +113,20 @@
     <description></description>
     <display-name>ModifyProductServlet</display-name>
     <servlet-name>ModifyProductServlet</servlet-name>
-    <servlet-class>cn.techtutorial.servlet.ModifyProductServlet</servlet-class>
+    <servlet-class>com.ecommerce.servlet.ModifyProductServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ModifyProductServlet</servlet-name>
     <url-pattern>/modify-product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MyOrders</display-name>
+    <servlet-name>MyOrders</servlet-name>
+    <servlet-class>com.ecommerce.servlet.MyOrders</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyOrders</servlet-name>
+    <url-pattern>/my-orders</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,10 +1,10 @@
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.*"%>
-<%@ page import="cn.techtutorial.connection.dbConnect"%>
-<%@ page import="cn.techtutorial.model.User"%>
-<%@ page import="cn.techtutorial.model.Product"%>
-<%@ page import="cn.techtutorial.model.Cart"%>
-<%@ page import="cn.techtutorial.dao.ProductDao"%>
+<%@ page import="com.ecommerce.connection.dbConnect"%>
+<%@ page import="com.ecommerce.model.User"%>
+<%@ page import="com.ecommerce.model.Product"%>
+<%@ page import="com.ecommerce.model.Cart"%>
+<%@ page import="com.ecommerce.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
    pageEncoding="ISO-8859-1"%>
 <% 
@@ -62,7 +62,7 @@ ArrayList<Cart> cart_list= (ArrayList<Cart>) session.getAttribute("cart-list");
                     		
                     		<% } else { %>
    			    			<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to Cart</a>
-   			    			<a href="order-now?quantity=1&id=<%= p.getId() %>" class="btn btn-purple">Buy now</a>
+   			    			<a href="index.jsp?quantity=1&id=<%= p.getId() %>" class="btn btn-purple">Buy now</a>
    			    			<% } %>
    			                </div>
    	 				</div>

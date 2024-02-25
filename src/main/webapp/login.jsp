@@ -1,6 +1,6 @@
 <%@ page import="java.util.*"%>
-<%@ page import="cn.techtutorial.model.User"%>
-<%@ page import="cn.techtutorial.model.Cart"%>
+<%@ page import="com.ecommerce.model.User"%>
+<%@ page import="com.ecommerce.model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <% User auth = (User) request.getSession().getAttribute("auth");
@@ -27,8 +27,8 @@
 <body>
 <%@ include file="includes/navbar.jsp" %>
 
-<div class="container">
-	<div class="card mx-auto w-50 my-5">
+<div class="container mb-5 d-flex justify-content-center align-items-center" style="height:500px;">
+	<div class="card mx-auto w-50">
 		<div class="card-header text-center">User Login</div>
 
 		<div class="card-body">

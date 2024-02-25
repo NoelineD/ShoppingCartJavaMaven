@@ -7,7 +7,7 @@
 		      <div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav ml-auto">
 							<li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-		        	<li class="nav-item"><a href="cart.jsp" class="nav-link">Cart</a></li>
+		        	<li class="nav-item"><a href="cart.jsp" class="nav-link">Cart <span class="badge badge-danger">${cart_list.size()}</span></a></li>
 		        	<li class="nav-item"><a href="contact.jsp" class="nav-link">Contact</a></li>
 		        	<li class="nav-item dropdown position-static">
 	              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
@@ -48,7 +48,7 @@
             						<a href="index.jsp" class="dropdown-item">Modify Product</a>
         						<% } else { %>
             						<a class="dropdown-item" href="log-out">Logout</a>
-            						<a class="dropdown-item" href="orders.jsp">My Orders</a>
+            						<a class="dropdown-item" href="my-orders">My Orders</a>
         						<% }
     							} else {  %>
         							<a class="dropdown-item" href="login.jsp">LogIn</a>

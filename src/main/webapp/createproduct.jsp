@@ -1,7 +1,7 @@
 <%@ page import="java.util.*"%>
-<%@ page import="cn.techtutorial.model.Product"%>
-<%@ page import="cn.techtutorial.model.User"%>
-<%@ page import="cn.techtutorial.model.Cart"%>
+<%@ page import="com.ecommerce.model.Product"%>
+<%@ page import="com.ecommerce.model.User"%>
+<%@ page import="com.ecommerce.model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <% User auth = (User) request.getSession().getAttribute("auth");
