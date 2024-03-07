@@ -59,6 +59,7 @@ public class AddToCartServlet extends HttpServlet {
 			  //est ce que le produit existe dans le panier sinon juste ajouter quantité
 			  boolean exist = false;
 			  
+			  // la boucle parcourt la liste d'article pour voir si un article correspond a notre id
 			  for(Cart c:cart_list) {
 				  if(c.getId() == id) {
 					  exist = true;
